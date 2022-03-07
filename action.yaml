@@ -1,22 +1,30 @@
-name: 'Hello World' # taken from https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
-description: 'Greet someone'
+name: 'Compile Go' # taken from https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
+description: 'Compiles a golang project'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
-outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-id }}
+  go-version:
+    description: 'Version of golang to use'
+    required: false
+    default: '~1.17'
+  working-directory:
+    description: 'Directory to run the command from'
+    required: false
+    default: '.'
+  command:
+    description: 'Command to run'
+    required: false
+    default: "go build -race ./..."
+outputs: {}
 runs:
   using: "composite"
   steps:
-    - run: echo Hello ${{ inputs.who-to-greet }}.
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup Go With Caching
+      uses: magnetikonline/action-golang-cache@v1
+      with:
+        go-version: inputs.go-version
+    - name: Compile
       shell: bash
-    - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
-      shell: bash
-    - run: ${{ github.action_path }}/goodbye.sh
-      shell: bash
-
+      run: |
+        cd ${{ inputs.working-directory }}
+        ${{ inputs.compile-command }}

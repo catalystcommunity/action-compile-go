@@ -22,7 +22,7 @@ runs:
     - name: Setup Go With Caching
       uses: magnetikonline/action-golang-cache@v1
       with:
-        go-version: inputs.go-version
+        go-version: ${{ inputs.go-version }}
     - name: Compile
       shell: bash
       run: |

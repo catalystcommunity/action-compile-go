@@ -1,11 +1,11 @@
 <!-- start title -->
 
-# GitHub Action:Hello World
+# GitHub Action:Compile Go
 
 <!-- end title -->
 <!-- start description -->
 
-Greet someone
+Compiles a golang project
 
 <!-- end description -->
 <!-- start contents -->
@@ -13,19 +13,29 @@ Greet someone
 <!-- start usage -->
 
 ```yaml
-- uses: catalystsquad/action-composite-action-template@undefined
+- uses: catalystsquad/action-compile-go@undefined
   with:
-    # Who to greet
-    # Default: World
-    who-to-greet: ""
+    # Version of golang to use
+    # Default: ~1.17
+    go-version: ""
+
+    # Directory to run the command from
+    # Default: .
+    working-directory: ""
+
+    # Command to run
+    # Default: go build -race ./...
+    command: ""
 ```
 
 <!-- end usage -->
 <!-- start inputs -->
 
-| **Input**          | **Description** | **Default** | **Required** |
-| :----------------- | :-------------- | :---------: | :----------: |
-| **`who-to-greet`** | Who to greet    |   `World`   |   **true**   |
+| **Input**               | **Description**                   |      **Default**       | **Required** |
+| :---------------------- | :-------------------------------- | :--------------------: | :----------: |
+| **`go-version`**        | Version of golang to use          |        `~1.17`         |  **false**   |
+| **`working-directory`** | Directory to run the command from |          `.`           |  **false**   |
+| **`command`**           | Command to run                    | `go build -race ./...` |  **false**   |
 
 <!-- end inputs -->
 <!-- start outputs -->

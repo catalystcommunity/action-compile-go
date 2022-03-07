@@ -27,4 +27,4 @@ runs:
       shell: bash
       run: |
         cd ${{ inputs.working-directory }}
-        ${{ inputs.compile-command }}
+        ${{ inputs.command }}

@@ -16,7 +16,7 @@ Compiles a golang project
 - uses: catalystsquad/action-compile-go@undefined
   with:
     # Version of golang to use
-    # Default: ~1.17
+    # Default: ~1.20
     go-version: ""
 
     # Directory to run the command from
@@ -33,7 +33,7 @@ Compiles a golang project
 
 | **Input**               | **Description**                   |      **Default**       | **Required** |
 | :---------------------- | :-------------------------------- | :--------------------: | :----------: |
-| **`go-version`**        | Version of golang to use          |        `~1.17`         |  **false**   |
+| **`go-version`**        | Version of golang to use          |        `~1.20`         |  **false**   |
 | **`working-directory`** | Directory to run the command from |          `.`           |  **false**   |
 | **`command`**           | Command to run                    | `go build -race ./...` |  **false**   |
 

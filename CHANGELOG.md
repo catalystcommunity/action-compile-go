@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/catalystsquad/action-compile-go/compare/v1.0.0...v1.1.0) (2023-05-14)
+
+
+### Features
+
+* updated golang version default and cache version ([#3](https://github.com/catalystsquad/action-compile-go/issues/3)) ([7ba161b](https://github.com/catalystsquad/action-compile-go/commit/7ba161b15ba12ae07f28961204074c017c531d5f))
+
 # 1.0.0 (2022-03-07)
 
 

@@ -13,7 +13,7 @@ Compiles a golang project
 <!-- start usage -->
 
 ```yaml
-- uses: catalystsquad/action-compile-go@undefined
+- uses: catalystcommunity/action-compile-go@undefined
   with:
     # Version of golang to use
     # Default: ~1.20
@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: crazy-max/ghaction-dump-context@v1
-      - uses: catalystsquad/action-compile-go@v1
+      - uses: catalystcommunity/action-compile-go@v1
 ```
 
 <!-- end examples -->
